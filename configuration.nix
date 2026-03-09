@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./users
+    ./programs
   ];
 
   boot.loader = {
@@ -61,7 +62,6 @@
     nixfmt
   ];
 
-  programs.firefox.enable = true;
   programs.steam.enable = true;
 
   system.stateVersion = "25.11";
