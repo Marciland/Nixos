@@ -64,5 +64,15 @@
     spotify
   ];
 
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;
+    storageDriver = "btrfs";
+    autoPrune = {
+      enable = true;
+      dates = "weekly";
+    };
+  };
+
   system.stateVersion = "25.11";
 }
