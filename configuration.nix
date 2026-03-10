@@ -57,6 +57,7 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
+    liquidctl # sudo liquidctl --match kraken set lcd screen orientation 90
     nixfmt
     vscode
     discord
