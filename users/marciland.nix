@@ -15,6 +15,7 @@
       user.name = "Marcel Witoschek";
       user.email = "marcel.marciland@gmail.com";
       user.signingkey = "/home/marciland/.ssh/github.pub";
+      core.editor = "code --wait";
       pull.rebase = true;
       fetch.prune = true;
       gpg.format = "ssh";
