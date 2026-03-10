@@ -57,12 +57,10 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
+    nixfmt
     vscode
     discord
-    nixfmt
   ];
-
-  programs.steam.enable = true;
 
   system.stateVersion = "25.11";
 }
