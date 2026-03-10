@@ -60,6 +60,7 @@
     nixfmt
     vscode
     discord
+    spotify
   ];
 
   system.stateVersion = "25.11";
