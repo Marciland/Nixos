@@ -44,12 +44,8 @@ in
   console.keyMap = "de";
 
   services = {
-    xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      xkb.layout = "de";
-    };
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
