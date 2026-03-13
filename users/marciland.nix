@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   users.users.marciland = {
     isNormalUser = true;
@@ -11,6 +12,15 @@
 
   home-manager.users.marciland = {
     home.stateVersion = "25.11";
+
+    home.packages = with pkgs; [
+      gcc
+      gnumake
+      rustup
+      leptosfmt
+      cargo-llvm-cov
+      cargo-nextest
+    ];
 
     programs.git = {
       enable = true;
