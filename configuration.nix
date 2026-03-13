@@ -1,12 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
-in
 {
   imports = [
-    (import "${home-manager}/nixos")
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
     ./users
     ./programs
   ];
@@ -26,6 +23,9 @@ in
   nix = {
     settings = {
       auto-optimise-store = true;
+      experimental-features = [
+        "flakes"
+      ];
     };
     gc = {
       automatic = true;

@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
   users.users.marciland = {
     isNormalUser = true;
@@ -18,6 +19,8 @@
       gnumake
       rustup
       leptosfmt
+      cargo-leptos
+      pnpm
       cargo-llvm-cov
       cargo-nextest
     ];
