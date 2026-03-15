@@ -15,8 +15,10 @@
     home.stateVersion = "25.11";
 
     home.packages = with pkgs; [
+      pkg-config
       gcc
       gnumake
+      libpq.dev
       rustup
       leptosfmt
       cargo-leptos
@@ -24,6 +26,10 @@
       cargo-llvm-cov
       cargo-nextest
     ];
+
+    home.sessionVariables = {
+      PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+    };
 
     programs.git = {
       enable = true;
