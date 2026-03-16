@@ -1,5 +1,7 @@
 { pkgs, ... }:
-
+let
+  cargo-leptos = import ../packages/cargo-leptos.nix { inherit pkgs; };
+in
 {
   users.users.marciland = {
     isNormalUser = true;
