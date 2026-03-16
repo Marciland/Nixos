@@ -16,6 +16,12 @@ in
   home-manager.users.marciland = {
     home.stateVersion = "25.11";
 
+    programs.bash.enable = true;
+
+    home.sessionVariables = {
+      PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+    };
+
     home.packages = with pkgs; [
       pkg-config
       gcc
@@ -28,10 +34,6 @@ in
       cargo-llvm-cov
       cargo-nextest
     ];
-
-    home.sessionVariables = {
-      PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
-    };
 
     programs.git = {
       enable = true;
