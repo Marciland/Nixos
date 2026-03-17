@@ -1,6 +1,8 @@
 { pkgs, ... }:
+
 let
   cargo-leptos = import ../packages/cargo-leptos.nix { inherit pkgs; };
+  nodejs = import ../packages/nodejs.nix { inherit pkgs; };
 in
 {
   users.users.marciland = {
@@ -28,9 +30,10 @@ in
       gnumake
       libpq.dev
       rustup
-      leptosfmt
-      cargo-leptos
+      nodejs
       pnpm
+      cargo-leptos
+      leptosfmt
       cargo-llvm-cov
       cargo-nextest
     ];
