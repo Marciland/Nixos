@@ -22,6 +22,7 @@ in
 
     home.sessionVariables = {
       PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+      PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
     };
 
     home.packages = with pkgs; [
@@ -32,6 +33,8 @@ in
       rustup
       nodejs
       pnpm
+      playwright
+      playwright-driver.browsers
       cargo-leptos
       leptosfmt
       cargo-llvm-cov
