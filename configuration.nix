@@ -45,8 +45,12 @@
   console.keyMap = "de";
 
   services = {
-    displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
