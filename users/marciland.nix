@@ -40,6 +40,14 @@ in
           "org.gnome.Console.desktop"
         ];
       };
+
+      "org/gnome/mutter" = {
+        dynamic-workspaces = false;
+      };
+
+      "org/gnome/desktop/wm/preferences" = {
+        num-workspaces = 1;
+      };
     };
 
     home.packages = with pkgs; [
