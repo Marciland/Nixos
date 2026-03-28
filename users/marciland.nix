@@ -25,6 +25,12 @@ in
       PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
     };
 
+    dconf.settings = {
+      "org/gnome/gnome-session" = {
+        logout-prompt = false;
+      };
+    };
+
     home.packages = with pkgs; [
       pkg-config
       gcc
