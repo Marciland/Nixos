@@ -63,13 +63,45 @@
 
   programs.nix-ld.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    liquidctl # sudo liquidctl --match kraken set lcd screen orientation 90
-    nixfmt
-    vscode
-    discord
-    spotify
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      liquidctl # sudo liquidctl --match kraken set lcd screen orientation 90
+      nixfmt
+      vscode
+      discord
+      spotify
+    ];
+
+    gnome.excludePackages = with pkgs; [
+      baobab
+      decibels
+      epiphany
+      geary
+      loupe
+      nautilus
+      papers
+      showtime
+      simple-scan
+      snapshot
+      totem
+      yelp
+      gnome-calculator
+      gnome-calendar
+      gnome-characters
+      gnome-connections
+      gnome-contacts
+      gnome-clocks
+      gnome-disk-utility
+      gnome-font-viewer
+      gnome-logs
+      gnome-maps
+      gnome-music
+      gnome-system-monitor
+      gnome-text-editor
+      gnome-tour
+      gnome-weather
+    ];
+  };
 
   virtualisation.docker = {
     enable = true;
