@@ -29,6 +29,17 @@ in
       "org/gnome/gnome-session" = {
         logout-prompt = false;
       };
+
+      "org/gnome/shell" = {
+        favorite-apps = [
+          "firefox.desktop"
+          "code.desktop"
+          "steam.desktop"
+          "discord.desktop"
+          "spotify.desktop"
+          "org.gnome.Console.desktop"
+        ];
+      };
     };
 
     home.packages = with pkgs; [
