@@ -59,6 +59,11 @@ in
         picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/map-d.svg";
       };
 
+      "org/gnome/desktop/screensaver" = {
+        lock-enabled = false;
+        idle-activation-enabled = false;
+      };
+
       "org/gnome/settings-daemon/plugins/power" = {
         power-button-action = "interactive";
         sleep-inactive-ac-type = "nothing";
