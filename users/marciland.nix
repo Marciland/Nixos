@@ -23,6 +23,7 @@ in
     home.sessionVariables = {
       PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
       PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
+      FRONTEND_PORT = 6300;
     };
 
     dconf.settings = {
