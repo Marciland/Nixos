@@ -46,6 +46,7 @@
 
   services = {
     desktopManager.gnome.enable = true;
+    gnome.gnome-settings-daemon.enable = true;
     displayManager.gdm = {
       enable = true;
       wayland = true;

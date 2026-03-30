@@ -48,6 +48,12 @@ in
       "org/gnome/desktop/wm/preferences" = {
         num-workspaces = 1;
       };
+
+      "org/gnome/settings-daemon/plugins/power" = {
+        power-button-action = "interactive";
+        sleep-inactive-ac-type = "nothing";
+        idle-dim = false;
+      };
     };
 
     home.packages = with pkgs; [
