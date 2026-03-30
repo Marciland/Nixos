@@ -49,6 +49,16 @@ in
         num-workspaces = 1;
       };
 
+      "org/gnome/desktop/interface" = {
+        enable-hot-corners = false;
+        color-scheme = "prefer-dark";
+      };
+
+      "org/gnome/desktop/background" = {
+        picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/map-l.svg";
+        picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/map-d.svg";
+      };
+
       "org/gnome/settings-daemon/plugins/power" = {
         power-button-action = "interactive";
         sleep-inactive-ac-type = "nothing";
