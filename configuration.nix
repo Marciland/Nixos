@@ -79,7 +79,6 @@
       epiphany
       geary
       loupe
-      nautilus
       papers
       showtime
       simple-scan
