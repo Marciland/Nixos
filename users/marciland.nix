@@ -81,6 +81,7 @@ in
       rustup
       nodejs
       pnpm
+      git-lfs
       cargo-leptos
       leptosfmt
       cargo-llvm-cov
@@ -89,6 +90,7 @@ in
 
     programs.git = {
       enable = true;
+      lfs.enable = true;
       signing.key = "/home/marciland/.ssh/github.pub";
       settings = {
         user.name = "Marcel Witoschek";
