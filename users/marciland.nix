@@ -79,6 +79,7 @@ in
       gnumake
       libpq.dev
       rustup
+      cloc
       nodejs
       pnpm
       git-lfs
