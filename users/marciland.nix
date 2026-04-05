@@ -108,6 +108,7 @@ in
       enableDefaultConfig = false;
       matchBlocks = {
         "github.com" = {
+          hostname = "github.com";
           user = "git";
           identityFile = "/home/marciland/.ssh/github";
           identitiesOnly = true;
