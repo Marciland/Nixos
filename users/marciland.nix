@@ -92,7 +92,10 @@ in
     programs.git = {
       enable = true;
       lfs.enable = true;
-      signing.key = "/home/marciland/.ssh/github.pub";
+      signing = {
+        signByDefault = true;
+        key = "~/.ssh/github.pub";
+      };
       settings = {
         user.name = "Marcel Witoschek";
         user.email = "marcel.marciland@gmail.com";
