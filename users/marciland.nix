@@ -77,6 +77,7 @@ in
       pkg-config
       gcc
       gnumake
+      binaryen
       libpq.dev
       rustup
       cloc
