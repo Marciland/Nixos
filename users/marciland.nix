@@ -79,6 +79,7 @@ in
       gnumake
       binaryen
       libpq.dev
+      dotnet-sdk_10
       rustup
       cloc
       nodejs
