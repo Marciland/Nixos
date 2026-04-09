@@ -105,6 +105,7 @@ in
         pull.rebase = true;
         fetch.prune = true;
         gpg.format = "ssh";
+        advice.detachedHead = false;
       };
     };
 

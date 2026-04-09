@@ -1,9 +1,9 @@
 { pkgs }:
 
 let
-  version = "0.3.1";
-  hash = "sha256-vQZpw0hnBQRXmt4KsThcVwLtRwSpbjaGfojCIgfOn7E=";
-  cargoHash = "sha256-WlzkTZHWDkE2rhH+fi8+aa/mkjBEVwQK8cTxd2JUuZ8=";
+  version = "0.3.5";
+  hash = "sha256-wSnz3Hi+hUTwYFXoWMC6Uq9UH0+q0vHoryNwn4t8iMk=";
+  cargoHash = "sha256-2ax2yH/dMgXRVNffbl59OTeeMG+v83MnQnsyylrW22s=";
 in
 pkgs.cargo-leptos.overrideAttrs (oldAttrs: {
   version = version;
