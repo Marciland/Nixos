@@ -13,13 +13,6 @@ in
       "wheel"
       "docker"
     ];
-
-    packages = with pkgs; [
-      (wineWowPackages.full.override {
-        wineRelease = "staging";
-        mingwSupport = true;
-      })
-    ];
   };
 
   home-manager.users.marciland = {
@@ -28,9 +21,6 @@ in
     programs.bash.enable = true;
 
     home.sessionVariables = {
-      WINEARCH = "win64";
-      WINEPREFIX = "$HOME/.wine-battlenet";
-
       PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
 
       PW_TEST_CONNECT_WS_ENDPOINT = "ws://127.0.0.1:9323/";
