@@ -129,6 +129,12 @@ in
           identityFile = "/home/marciland/.ssh/github";
           identitiesOnly = true;
         };
+        "10.10.0.2" = {
+          hostname = "10.10.0.2";
+          user = "root";
+          identityFile = "/home/marciland/.ssh/raspi";
+          identitiesOnly = true;
+        };
       };
     };
   };
