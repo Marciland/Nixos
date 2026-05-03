@@ -106,7 +106,7 @@
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
-    storageDriver = "btrfs";
+    storageDriver = "overlay2";
     autoPrune = {
       enable = true;
       dates = "weekly";
