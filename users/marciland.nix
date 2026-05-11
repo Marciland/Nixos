@@ -2,6 +2,7 @@
 
 let
   scripts = ../scripts;
+  wasm-bindgen-cli = import ../packages/wasm-bindgen-cli.nix { inherit pkgs; };
   cargo-leptos = import ../packages/cargo-leptos.nix { inherit pkgs; };
   nodejs = import ../packages/nodejs.nix { inherit pkgs; };
 in
@@ -107,6 +108,7 @@ in
         pnpm
         git-lfs
         cargo-leptos
+        wasm-bindgen-cli
         leptosfmt
         cargo-llvm-cov
         cargo-nextest
