@@ -26,7 +26,6 @@ in
           PATH="${
             lib.makeBinPath [
               pkgs.rustup
-              pkgs.gnugrep
               pkgs.coreutils
             ]
           }" ${pkgs.bash}/bin/bash ${scripts}/rust-setup.sh
