@@ -1,12 +1,12 @@
 { pkgs }:
 
 let
-  version = "0.2.114";
+  version = "0.2.121";
 
   src = pkgs.fetchCrate {
     pname = "wasm-bindgen-cli";
     inherit version;
-    hash = "sha256-xrCym+rFY6EUQFWyWl6OPA+LtftpUAE5pIaElAIVqW0=";
+    hash = "sha256-ZOMgFNOcGkO66Jz/Z83eoIu+DIzo3Z/vq6Z5g6BDY/w=";
   };
 in
 pkgs.wasm-bindgen-cli.overrideAttrs (_oldAttrs: {
@@ -15,6 +15,6 @@ pkgs.wasm-bindgen-cli.overrideAttrs (_oldAttrs: {
   cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
     name = "wasm-bindgen-cli-${version}";
     inherit src;
-    hash = "sha256-Z8+dUXPQq7S+Q7DWNr2Y9d8GMuEdSnq00quUR0wDNPM=";
+    hash = "sha256-DPdCDPTAPBrbqLUqnCwQu1dePs9lGg85JCJOCIr9qjU=";
   };
 })
