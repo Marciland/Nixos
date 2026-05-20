@@ -59,6 +59,56 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    github-runners = {
+      marciland = {
+        enable = true;
+        name = "marciland";
+        user = "marciland";
+        group = "docker";
+        tokenFile = "/home/marciland/.secrets/github-token";
+        url = "https://github.com/Marciland/marciland.net";
+        extraPackages = with pkgs; [
+          bash
+          curl
+          git
+          git-lfs
+          glibc.bin
+          jq
+          gcc
+          binutils
+          gnumake
+          perl
+          pkg-config
+          openssl
+          libpq.dev
+          coreutils
+          findutils
+          gnugrep
+          gnused
+          gawk
+          gnutar
+          gzip
+          unzip
+          xz
+          zstd
+          cacert
+          rustup
+          binaryen
+          nodejs
+          pnpm
+          cargo-leptos
+          wasm-bindgen-cli
+          leptosfmt
+          docker
+          gnupg
+        ];
+
+        extraEnvironment = {
+          PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+        };
+      };
+    };
   };
   security.rtkit.enable = true;
 
