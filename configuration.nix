@@ -1,5 +1,11 @@
 { pkgs, inputs, ... }:
 
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -63,6 +69,7 @@
     github-runners = {
       marciland = {
         enable = true;
+        package = unstable.github-runner;
         name = "marciland";
         user = "marciland";
         group = "docker";
