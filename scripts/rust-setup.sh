@@ -9,6 +9,7 @@ rustup default "$TARGET"
 
 echo "Adding Rust components for: $TARGET"
 rustup component add llvm-tools-preview --toolchain "$TARGET"
+rustup component add rust-analyzer --toolchain "$TARGET"
 rustup target add wasm32-unknown-unknown
 
 CURRENT="$(rustup show active-toolchain | cut -d' ' -f1)"

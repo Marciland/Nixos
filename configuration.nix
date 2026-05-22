@@ -125,7 +125,7 @@ in
     systemPackages = with pkgs; [
       liquidctl # sudo liquidctl --match kraken set lcd screen orientation 90
       nixfmt
-      vscode
+      unstable.vscode
       discord
       spotify
     ];

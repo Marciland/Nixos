@@ -1,10 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   scripts = ../scripts;
   wasm-bindgen-cli = import ../packages/wasm-bindgen-cli.nix { inherit pkgs; };
   cargo-leptos = import ../packages/cargo-leptos.nix { inherit pkgs; };
   nodejs = import ../packages/nodejs.nix { inherit pkgs; };
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
 in
 {
   users.users.marciland = {
@@ -102,7 +106,7 @@ in
         binaryen
         libpq.dev
         dotnet-sdk_10
-        rustup
+        unstable.rustup
         cloc
         nodejs
         pnpm
