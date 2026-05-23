@@ -128,6 +128,7 @@ in
       unstable.vscode
       discord
       spotify
+      btop
     ];
 
     gnome.excludePackages = with pkgs; [
