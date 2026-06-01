@@ -50,7 +50,7 @@ in
         PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
 
         PW_TEST_CONNECT_WS_ENDPOINT = "ws://127.0.0.1:9323/";
-        FRONTEND_PORT = 6300;
+        WEBSITE_PORT = 6300;
       };
 
       dconf.settings = {
