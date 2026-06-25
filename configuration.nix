@@ -1,11 +1,5 @@
 { pkgs, inputs, ... }:
 
-let
-  unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.stdenv.hostPlatform.system;
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -55,7 +49,6 @@ in
     gnome.gnome-settings-daemon.enable = true;
     displayManager.gdm = {
       enable = true;
-      wayland = true;
     };
 
     pulseaudio.enable = false;
@@ -69,7 +62,6 @@ in
     github-runners = {
       marciland = {
         enable = true;
-        package = unstable.github-runner;
         name = "marciland";
         user = "marciland";
         group = "docker";
@@ -125,7 +117,7 @@ in
     systemPackages = with pkgs; [
       liquidctl # sudo liquidctl --match kraken set lcd screen orientation 90
       nixfmt
-      unstable.vscode
+      vscode
       discord
       spotify
       btop

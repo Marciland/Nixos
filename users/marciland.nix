@@ -5,10 +5,6 @@ let
   wasm-bindgen-cli = import ../packages/wasm-bindgen-cli.nix { inherit pkgs; };
   cargo-leptos = import ../packages/cargo-leptos.nix { inherit pkgs; };
   nodejs = import ../packages/nodejs.nix { inherit pkgs; };
-  unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.stdenv.hostPlatform.system;
-    config.allowUnfree = true;
-  };
 in
 {
   users.users.marciland = {
@@ -106,7 +102,7 @@ in
         binaryen
         libpq.dev
         dotnet-sdk_10
-        unstable.rustup
+        rustup
         cloc
         nodejs
         pnpm
@@ -139,7 +135,7 @@ in
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = {
+        settings = {
           "github.com" = {
             hostname = "github.com";
             user = "git";
