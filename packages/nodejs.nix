@@ -1,8 +1,8 @@
 { pkgs }:
 
 let
-  version = "22.22.1";
-  hash = "sha256-mmvIL5tJEnkUchn2oYrdHhhCTc6Q1B0qX81p1JJLo6o=";
+  version = "26.0.0";
+  hash = "sha256-NF1VhRTGJiK1x9H3tfKhnDGrFAXSF99J8BDF6o3swPQ=";
 in
 pkgs.stdenv.mkDerivation {
   name = "nodejs-${version}";
