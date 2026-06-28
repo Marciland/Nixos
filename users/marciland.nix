@@ -108,6 +108,7 @@ in
         pnpm
         git-lfs
         cargo-leptos
+        diesel-cli
         wasm-bindgen-cli
         leptosfmt
         cargo-llvm-cov
