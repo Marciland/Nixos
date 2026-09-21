@@ -1,6 +1,7 @@
 # Nixos
 
 ```sh
+sudo nix flake update
 sudo nixos-rebuild test --flake --impure
 ```
 
