@@ -43,7 +43,16 @@ in
       };
 
       home.sessionVariables = {
-        PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+        LD_LIBRARY_PATH = lib.makeLibraryPath [
+          pkgs.wayland
+          pkgs.libxkbcommon
+        ];
+
+        PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
+          pkgs.libpq.dev
+          pkgs.wayland.dev
+          pkgs.libxkbcommon.dev
+        ];
 
         PW_TEST_CONNECT_WS_ENDPOINT = "ws://127.0.0.1:9323/";
         WEBSITE_PORT = 6300;
@@ -97,6 +106,8 @@ in
 
       home.packages = with pkgs; [
         pkg-config
+        wayland
+        libxkbcommon
         gcc
         gnumake
         binaryen

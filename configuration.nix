@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -104,7 +109,64 @@
         ];
 
         extraEnvironment = {
-          PKG_CONFIG_PATH = "${pkgs.libpq.dev}/lib/pkgconfig";
+          PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
+            pkgs.libpq.dev
+          ];
+        };
+      };
+
+      project-k8 = {
+        enable = true;
+        name = "project-k8";
+        user = "marciland";
+        group = "docker";
+        tokenFile = "/home/marciland/.secrets/github-token-k8";
+        url = "https://github.com/Marciland/project-k8";
+        extraPackages = with pkgs; [
+          bash
+          curl
+          git
+          git-lfs
+          glibc.bin
+          jq
+          gcc
+          binutils
+          gnumake
+          perl
+          pkg-config
+          openssl
+          libpq.dev
+          coreutils
+          findutils
+          gnugrep
+          gnused
+          gawk
+          gnutar
+          gzip
+          unzip
+          xz
+          zstd
+          cacert
+          rustup
+          binaryen
+          nodejs
+          pnpm
+          cargo-leptos
+          wasm-bindgen-cli
+          leptosfmt
+          docker
+          gnupg
+        ];
+
+        extraEnvironment = {
+          LD_LIBRARY_PATH = lib.makeLibraryPath [
+            pkgs.wayland
+            pkgs.libxkbcommon
+          ];
+          PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
+            pkgs.wayland.dev
+            pkgs.libxkbcommon.dev
+          ];
         };
       };
     };

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-TARGET="1.91.0"
+TARGET="1.98.1"
 
 echo "Setting Rust toolchain to: $TARGET"
 rustup default "$TARGET"
