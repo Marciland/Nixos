@@ -72,6 +72,9 @@
         group = "docker";
         tokenFile = "/home/marciland/.secrets/github-token";
         url = "https://github.com/Marciland/marciland.net";
+        extraLabels = [
+          "dependabot"
+        ];
         extraPackages = with pkgs; [
           bash
           curl
@@ -122,6 +125,9 @@
         group = "docker";
         tokenFile = "/home/marciland/.secrets/github-token-k8";
         url = "https://github.com/Marciland/project-k8";
+        extraLabels = [
+          "dependabot"
+        ];
         extraPackages = with pkgs; [
           bash
           curl
