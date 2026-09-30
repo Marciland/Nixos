@@ -46,6 +46,7 @@ in
         LD_LIBRARY_PATH = lib.makeLibraryPath [
           pkgs.wayland
           pkgs.libxkbcommon
+          pkgs.vulkan-loader
         ];
 
         PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
